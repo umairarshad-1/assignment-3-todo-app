@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo List Manager</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Syne (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+
+  <div class="app-wrapper">
+
+    <!-- ── Header ── -->
+    <header class="app-header">
+      <h1 class="app-title">TASKS<span class="dot">.</span></h1>
+      <p class="app-subtitle">Stay focused. Ship it.</p>
+    </header>
+
+    <!-- ── Add-task form ── -->
+    <!-- Event listener: "submit" is attached in script.js -->
+    <form id="todo-form" class="todo-form" novalidate>
+      <input
+        id="task-input"
+        type="text"
+        class="task-input"
+        placeholder="What needs to be done?"
+        autocomplete="off"
+        maxlength="120"
+        required
+      />
+      <button type="submit" class="btn btn-add" aria-label="Add task">
+        <span>+</span>
+      </button>
+    </form>
+
+    <!-- ── Counter bar ── -->
+    <div class="counter-bar">
+      <span id="total-count">0 tasks</span>
+      <span class="counter-sep">·</span>
+      <span id="completed-count">0 completed</span>
+    </div>
+
+    <!-- ── Task list ── -->
+    <!-- Tasks are injected here dynamically via createElement / appendChild -->
+    <ul id="task-list" class="task-list" aria-label="Todo list"></ul>
+
+    <!-- ── Empty-state message ── -->
+    <p id="empty-state" class="empty-state">
+      No tasks yet — add one above ↑
+    </p>
+
+    <!-- ── Clear-all button ── -->
+    <button id="clear-all-btn" class="btn btn-clear" aria-label="Clear all tasks">
+      Clear All
+    </button>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
